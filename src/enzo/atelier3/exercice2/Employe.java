@@ -71,7 +71,10 @@ public class Employe extends Personne{
 	protected static boolean verifAgeValide(GregorianCalendar dateEmbauche, GregorianCalendar dateNaissance) {
 		boolean result = false;
 		GregorianCalendar today = new GregorianCalendar();
-		int age = getAge(this);
+		int age = today.get(Calendar.YEAR) - dateNaissance.get(Calendar.YEAR);
+		if(today.getTimeInMillis() < dateNaissance.getTimeInMillis()) {
+			age--;
+		}
 		int tempsEntreprise = today.get(Calendar.YEAR) - dateEmbauche.get(Calendar.YEAR);
 		int ageRequis = age - tempsEntreprise;
 		if((16<=ageRequis && ageRequis<65)) {
