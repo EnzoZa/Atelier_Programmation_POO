@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 import enzo.atelier3.exercice1.Adresse;
 
 /**
- * Classe Manager descendant de employe servant � modeliser les informations contenues dans un manager
+ * Classe Manager descendant de employe servant à modeliser les informations contenues dans un manager
  * @author zampaglione_e
  *
  */
@@ -35,8 +35,8 @@ public class Manager extends Employe {
 		}
 	}
 	
-	/** Construction d'un manager � l'aide du constructeur
-	 * Avec v�rification des champs de date pour s'assurer de son age
+	/** Construction d'un manager à l'aide du constructeur
+	 * Avec vérification des champs de date pour s'assurer de son age
 	 * (plus de 16 et moins de 65) et que sa date d'embauche concorde avec 
 	 * sa date de naissance 
 	 * @param leNom le nom de la personne
@@ -59,7 +59,7 @@ public class Manager extends Employe {
 		return temp;
 	}
 
-	/** Red�fintion de toString
+	/** Redéfintion de toString
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class Manager extends Employe {
 	}
 	
 	/** Augmentation du salaire d'un pourcent mis en parametre
-	 * Verification du pourcentage pour s'assurer qu'il est sup�rieur � 0
+	 * Verification du pourcentage pour s'assurer qu'il est supérieur à 0
 	 * @param pourcent
 	 */
 	@Override

@@ -14,7 +14,7 @@ public class Personne{
 	/**
 	 * Constructeur de Personne
 	 * @param leNom le nom de la personne
-	 * @param lePrenom le pr�nom de la personne
+	 * @param lePrenom le prénom de la personne
 	 * @param laDate la date de naissance de la personne
 	 * @param lAdresse l'adresse de la personne
 	 */
@@ -29,11 +29,11 @@ public class Personne{
 	/** 
 	 * Constructeur de Personne
 	 * @param leNom le nom de la personne
-	 * @param lePrenom le pr�nom de la personne
+	 * @param lePrenom le prénom de la personne
 	 * @param j le jour de naissance
 	 * @param m le mois de naissance
-	 * @param a l'ann�e de naissance
-	 * @param numero le n� de la rue
+	 * @param a l'année de naissance
+	 * @param numero le n° de la rue
 	 * @param rue la rue
 	 * @param code_postal le code postal de l'adresse
 	 * @param ville la ville ou la personne habite
@@ -51,7 +51,7 @@ public class Personne{
 	}
 	/**
 	 * Accesseur
-	 * @return retourne le pr�nom
+	 * @return retourne le prénom
 	 */
 	public String getPrenom(){
 		return prenom;

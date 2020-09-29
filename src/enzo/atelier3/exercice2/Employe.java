@@ -7,7 +7,7 @@ import enzo.atelier3.exercice1.Adresse;
 import enzo.atelier3.exercice1.Personne;
 
 /**
- * Classe Employe servant � modeliser les informations contenues dans un employe
+ * Classe Employe servant à modeliser les informations contenues dans un employe
  * @author zampaglione_e
  *
  */
@@ -71,10 +71,7 @@ public class Employe extends Personne{
 	protected static boolean verifAgeValide(GregorianCalendar dateEmbauche, GregorianCalendar dateNaissance) {
 		boolean result = false;
 		GregorianCalendar today = new GregorianCalendar();
-		int age = today.get(Calendar.YEAR) - dateNaissance.get(Calendar.YEAR);
-		if(today.getTimeInMillis() < dateNaissance.getTimeInMillis()) {
-	        age--;
-		}
+		int age = getAge(this);
 		int tempsEntreprise = today.get(Calendar.YEAR) - dateEmbauche.get(Calendar.YEAR);
 		int ageRequis = age - tempsEntreprise;
 		if((16<=ageRequis && ageRequis<65)) {
@@ -104,7 +101,7 @@ public class Employe extends Personne{
 	}
 	
 	/** Augmentation du salaire d'un pourcent mis en parametre
-	 * Verification du pourcentage pour s'assurer qu'il est sup�rieur � 0
+	 * Verification du pourcentage pour s'assurer qu'il est supérieur à 0
 	 * @param pourcent
 	 */
 	public void augmenterSalaire(float pourcent){
@@ -114,7 +111,7 @@ public class Employe extends Personne{
 	}
 	
 	/** Calcul le temps passer dans l'entreprise
-	 * On rajoute 1 ans pour compter l'ann�e en cours
+	 * On rajoute 1 ans pour compter l'année en cours
 	 * @param e
 	 * @return le temps passer par l'employe dans l'entreprise
 	 */
