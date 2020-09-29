@@ -13,10 +13,10 @@ import enzo.atelier3.exercice1.Adresse;
 public class Secretaire extends Employe{
 	protected ArrayList<Manager> listeManager;
 	/** Construction d'une secretaire
-	 * @param leNom
-	 * @param lePrenom
-	 * @param dateNaissance
-	 * @param lAdresse
+	 * @param leNom le nom de la personne
+	 * @param lePrenom le prénom de la personne
+	 * @param dateNaissance la date de naissance de la personne
+	 * @param lAdresse l'adresse de la personne
 	 * @param salaire
 	 * @param dateEmbauche
 	 */
@@ -46,10 +46,10 @@ public class Secretaire extends Employe{
 	 * Avec v�rification des champs de date pour s'assurer de son age
 	 * (plus de 16 et moins de 65) et que sa date d'embauche concorde avec 
 	 * sa date de naissance 
-	 * @param leNom
-	 * @param lePrenom
-	 * @param dateNaissance
-	 * @param lAdresse
+	 * @param leNom le nom de la personne
+	 * @param lePrenom le prénom de la personne
+	 * @param dateNaissance la date de naissance de la personne
+	 * @param lAdresse l'adresse de la personne
 	 * @param salaire
 	 * @param dateEmbauche
 	 * @return une secretaire si les conditions sont respectees sinon null

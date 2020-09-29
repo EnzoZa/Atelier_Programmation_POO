@@ -117,7 +117,7 @@ public class Personne{
 		if(today.getTimeInMillis() < p.dateNaissance.getTimeInMillis()) {
 	        age--;
 		}
-		return age;
+		return age ;
 	}
 	
 	public static boolean plusAgee(Personne p1, Personne p2) {
