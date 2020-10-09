@@ -1,10 +1,11 @@
 package enzo.atelier4.forme3d;
 import enzo.atelier4.Forme;
-public class Forme3D extends Forme{
+public abstract class Forme3D extends Forme{
 
-    public Forme3D(String nom, float longueur, float largeur, float hauteur) {
-        super(nom, longueur, largeur, hauteur);
+    public abstract double volume(Forme f);
+
+    public Forme3D(){super();}
+    public Forme3D(String nom) {
+        super(nom);
     }
-
-    abstract volume(Forme f){}
 }

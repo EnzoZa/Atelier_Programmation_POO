@@ -1,13 +1,14 @@
 package enzo.atelier4;
-
+import enzo.atelier4.forme2d.*;
+import enzo.atelier4.forme3d.*;
 public class Main {
 
     public static void main(String[] args) {
-        Forme f = new Forme("enzo");
+        Ellipse f = new Ellipse(10,10);
         System.out.println(f.identifiant);
         f.identifiant = "coucou";
         System.out.println(f.identifiant);
-        Forme f2 = new Forme("Zozo");
+        Cylindre f2 = new Cylindre("Zozo",10,10);
         System.out.println(f2.identifiant);
     }
 

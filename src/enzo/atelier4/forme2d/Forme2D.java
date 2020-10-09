@@ -1,11 +1,10 @@
 package enzo.atelier4.forme2d;
 import enzo.atelier4.Forme;
 
-public class Forme2D extends Forme{
+public abstract class Forme2D extends Forme{
 
-    public Forme2D(String nom, float longueur, float largeur, float hauteur) {
-        super(nom, longueur, largeur, hauteur);
-    }
+    abstract double perimetre(Forme f);
 
-    abstract float perimetre(Forme f){}
+    public Forme2D(){super();}
+    public Forme2D(String nom) {super(nom);}
 }

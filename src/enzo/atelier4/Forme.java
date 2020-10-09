@@ -2,43 +2,42 @@ package enzo.atelier4;
 
 import java.util.Objects;
 
-public class Forme {
+public abstract class Forme {
     private static int instance = 0;
-    public String identifiant = "_n";
-    private float longueur;
-    private float largeur;
-    private float hauteur;
-
-    /**
-     * @return retourne l'identifiant
-     */
-
+    public String identifiant = getIdentifiant();
     private String nom = "Forme";
 
-    public Forme(String nom, float longueur, float largeur, float hauteur){
-        this.nom = nom;
-        this.longueur = longueur;
-        this.largeur = largeur;
-        this.hauteur = hauteur;
-        instance+=1;
-        identifiant = nom + identifiant + instance;
+    protected abstract double surface(Forme f);
+    public abstract String toString();
+
+    public Forme(){
+        this.identifiant = "_n";
+        this.instance+=1;
+        this.identifiant = nom + identifiant + instance;
     }
 
-    public float surface(Forme f){
-        return 2*(f.largeur*f.longueur + f.largeur*f.hauteur + f.longueur*f.hauteur)
+    public Forme(String nom){
+        this.nom = nom;
+        this.identifiant = "_n";
+        this.instance+=1;
+        this.identifiant = nom + identifiant + instance;
+    }
+
+    private String getIdentifiant() {
+        return identifiant;
     }
 
     public boolean plusGrandSurface(Forme f){
-        return (surface(this)>surface(f))
+        return (surface(this)>surface(f));
     }
-
+/*
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Forme)) return false;
         Forme forme = (Forme) o;
-        return Float.compare(forme.longueur, longueur) == 0 &&
-                Float.compare(forme.largeur, largeur) == 0 &&
-                Float.compare(forme.hauteur, hauteur) == 0;
-    }
+        return Float.compare(Forme.longueur, longueur) == 0 &&
+                Float.compare(Forme.largeur, largeur) == 0 &&
+                Float.compare(Forme.hauteur, hauteur) == 0;
+    } */
 }
