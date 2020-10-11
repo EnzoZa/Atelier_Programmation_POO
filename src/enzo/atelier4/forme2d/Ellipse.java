@@ -1,15 +1,14 @@
 package enzo.atelier4.forme2d;
 import enzo.atelier4.Forme;
 
-public class Ellipse extends Forme2D{
+public class Ellipse extends Forme2D {
     private float longueur;
     private float largeur;
     private float demi_largeur;
     private float demi_longueur;
-    private String nom = "Ellipse";
+    protected String nom = "Ellipse";
 
     public Ellipse(float longueur, float largeur) {
-        super();
         this.longueur = longueur;
         this.largeur = largeur;
         this.demi_largeur = (this.largeur/2);
@@ -17,7 +16,7 @@ public class Ellipse extends Forme2D{
     }
 
     public Ellipse(String nom, float longueur, float largeur) {
-        super(nom);
+        this.nom = nom;
         this.longueur = longueur;
         this.largeur = largeur;
         this.demi_largeur = (this.largeur/2);
@@ -36,5 +35,10 @@ public class Ellipse extends Forme2D{
     public String toString() {
         return("Votre ellipse " + identifiant + " à une surface de " + surface(this) +
                 " et à un perimetre de " + perimetre(this));
+    }
+
+    protected String getIdentifiant(){
+        this.instance+=1;
+        return nom + "_n" + instance;
     }
 }

@@ -1,31 +1,16 @@
 package enzo.atelier4;
 
 import java.util.Objects;
+import enzo.atelier4.forme2d.*;
+import enzo.atelier4.forme3d.*;
 
 public abstract class Forme {
-    private static int instance = 0;
+    protected static int instance = 0;
     public String identifiant = getIdentifiant();
-    private String nom = "Forme";
 
+    protected abstract String getIdentifiant();
     protected abstract double surface(Forme f);
     public abstract String toString();
-
-    public Forme(){
-        this.identifiant = "_n";
-        this.instance+=1;
-        this.identifiant = nom + identifiant + instance;
-    }
-
-    public Forme(String nom){
-        this.nom = nom;
-        this.identifiant = "_n";
-        this.instance+=1;
-        this.identifiant = nom + identifiant + instance;
-    }
-
-    private String getIdentifiant() {
-        return identifiant;
-    }
 
     public boolean plusGrandSurface(Forme f){
         return (surface(this)>surface(f));

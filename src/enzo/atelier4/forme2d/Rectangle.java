@@ -4,16 +4,15 @@ import enzo.atelier4.Forme;
 public class Rectangle extends Forme2D {
     private float longueur;
     private float largeur;
-    private String nom = "Rectangle";
+    protected String nom = "Rectangle";
 
     public Rectangle(float longueur, float largeur) {
-        super();
         this.longueur = longueur;
         this.largeur = largeur;
     }
 
     public Rectangle(String nom, float longueur, float largeur) {
-        super(nom);
+        this.nom = nom;
         this.longueur = longueur;
         this.largeur = largeur;
     }
@@ -30,6 +29,11 @@ public class Rectangle extends Forme2D {
     public String toString() {
         return("Votre rectangle " + identifiant + " à une surface de " + surface(this) +
                 " et à un perimetre de " + perimetre(this));
+    }
+
+    protected String getIdentifiant(){
+        this.instance+=1;
+        return nom + "_n"+ instance;
     }
 
 }

@@ -3,15 +3,14 @@ import enzo.atelier4.Forme;
 
 public class Cercle extends Forme2D {
     private float rayon;
-    private String nom = "Cercle";
+    protected String nom = "Cercle";
 
     public Cercle(float rayon) {
-        super();
         this.rayon = rayon;
     }
 
     public Cercle(String nom, float rayon) {
-        super(nom);
+        this.nom = nom;
         this.rayon = rayon;
     }
 
@@ -26,5 +25,10 @@ public class Cercle extends Forme2D {
     public String toString() {
         return("Votre cercle " + identifiant + " à une surface de " + surface(this) +
                 " et à un perimetre de " + perimetre(this));
+    }
+
+    protected String getIdentifiant(){
+        this.instance+=1;
+        return nom + "_n" + instance;
     }
 }

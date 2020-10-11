@@ -3,15 +3,14 @@ import enzo.atelier4.Forme;
 
 public class Sphere extends Forme3D {
     private float rayon;
-    private String nom = "Sphere";
+    protected String nom = "Sphere";
 
     public Sphere(float rayon) {
-        super();
         this.rayon = rayon;
     }
 
     public Sphere(String nom, float rayon) {
-        super(nom);
+        this.nom = nom;
         this.rayon = rayon;
     }
 
@@ -27,5 +26,10 @@ public class Sphere extends Forme3D {
     public String toString() {
         return("Votre sphere " + identifiant + " à une surface de " + surface(this) +
         " et à un volume de " + volume(this));
+    }
+
+    protected String getIdentifiant(){
+        this.instance+=1;
+        return nom + "_n"+ instance;
     }
 }
