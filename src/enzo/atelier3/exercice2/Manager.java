@@ -64,7 +64,7 @@ public class Manager extends Employe {
 	 */
 	@Override
 	public String toString() {
-		return (getNom() + " " + getPrenom() + " est un manager qui touche " + salaire + " ,il travail dans l'entreprise depuis " + calculAnnuite(this)
+		return (getNom() + " " + getPrenom() + " est un manager qui touche " + salaire + " ,il travail dans l'entreprise depuis " + calculAnnuite()
 				+ " et sa secretaire est " + secretaire.getNom() + " " + secretaire.getPrenom());
 	}
 
@@ -85,7 +85,7 @@ public class Manager extends Employe {
 	@Override
 	public void augmenterSalaire(float pourcent) {
 		if (pourcent > 0) {
-			this.salaire = salaire * (((pourcent + (0.5 * calculAnnuite(this))) / 100) + 1);
+			this.salaire = salaire * (((pourcent + (0.5 * calculAnnuite())) / 100) + 1);
 		}
 	}
 }

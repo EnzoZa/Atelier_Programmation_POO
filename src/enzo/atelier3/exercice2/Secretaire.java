@@ -11,6 +11,7 @@ import enzo.atelier3.exercice1.Adresse;
  *
  */
 public class Secretaire extends Employe{
+	private final int MAX_MANAGER = 5;
 	protected ArrayList<Manager> listeManager;
 	/** Construction d'une secretaire
 	 * @param leNom le nom de la personne
@@ -20,7 +21,7 @@ public class Secretaire extends Employe{
 	 * @param salaire
 	 * @param dateEmbauche
 	 */
-	protected Secretaire(String leNom,String lePrenom, GregorianCalendar dateNaissance, Adresse lAdresse,
+	private Secretaire(String leNom,String lePrenom, GregorianCalendar dateNaissance, Adresse lAdresse,
 			float salaire, GregorianCalendar dateEmbauche) {
 		super(leNom, lePrenom, dateNaissance, lAdresse, salaire, dateEmbauche);
 		// TODO Auto-generated constructor stub
@@ -79,7 +80,7 @@ public class Secretaire extends Employe{
 	 * @param m
 	 */
 	public void addManager(Manager m) {
-		if (sizeListeManager() < 5) {
+		if (sizeListeManager() < MAX_MANAGER) {
 			m.secretaire = this;
 			listeManager.add(m);
 		}

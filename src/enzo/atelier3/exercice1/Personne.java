@@ -9,7 +9,7 @@ public class Personne{
     private String prenom;
     private final GregorianCalendar dateNaissance;
     private Adresse adresse=ADRESSE_INCONNUE;
-    private static int personneInstance = 1;
+    private static int personneInstance;
 	
 	/**
 	 * Constructeur de Personne
@@ -19,11 +19,11 @@ public class Personne{
 	 * @param lAdresse l'adresse de la personne
 	 */
 	public Personne(String leNom,String lePrenom, GregorianCalendar laDate, Adresse lAdresse){
+		personneInstance ++;
 		nom = leNom.toUpperCase();
 		prenom=lePrenom;
 		dateNaissance=laDate;
 		adresse=lAdresse;
-		personneInstance ++;
 	}
 	
 	/** 
@@ -74,7 +74,7 @@ public class Personne{
 	 * Accesseur
 	 * @return retourne ne nombre de personne existante dans cette instance 
 	 */
-	public int getNbPersonne() {
+	public static int getNbPersonne() {
 		return personneInstance;
 	}
 	/**
@@ -140,8 +140,7 @@ public class Personne{
 	}
 	*/
 	
-	/** 
-	 * Constructeur de Personne
+	/**
 	 * @param p1 une Personne
 	 * @param p2 une Personne
 	 * @return True si p1 est plus agee que p2, False dans la cas contraire
@@ -150,8 +149,7 @@ public class Personne{
 		return p1.dateNaissance.after(p2.dateNaissance);
 	}
 	
-	/** 
-	 * Constructeur de Personne
+	/**
 	 * @param p une Personne
 	 * @return True si l'instance actuelle est plus agee que p, False dans la cas contraire
 	 */

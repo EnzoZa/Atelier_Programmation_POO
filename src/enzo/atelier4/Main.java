@@ -10,10 +10,9 @@ public class Main {
         Cylindre f2 = new Cylindre(10,10);
         tabForme.add(f);
         tabForme.add(f2);
-        //System.out.println(plusGrandeSurface(f,f2));
+        //System.out.println(plusGrandSurface(f,f2));
         for(Forme i : tabForme){
             System.out.println(i.surface());
         }
     }
-
 }

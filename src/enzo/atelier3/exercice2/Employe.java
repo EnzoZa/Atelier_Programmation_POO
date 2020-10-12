@@ -54,7 +54,7 @@ public class Employe extends Personne{
 	public static Employe createEmploye(String leNom,String lePrenom, GregorianCalendar dateNaissance, Adresse lAdresse,
 			float salaire, GregorianCalendar dateEmbauche) {
 		Employe temp;
-		if(verifAgeValide(dateEmbauche, dateNaissance)) {
+		if(verifAgeValide(dateEmbauche, dateNaissance) && salaire > 0) {
 			temp = new Employe(leNom, lePrenom, dateNaissance, lAdresse, salaire, dateEmbauche);
 		}
 		else {
@@ -86,10 +86,10 @@ public class Employe extends Personne{
 	/**
 	 * @return retourne l'age.
 	 */
-	public int getAge(Employe e) {
+	public int getAge() {
 		GregorianCalendar today = new GregorianCalendar();
-		int age = today.get(Calendar.YEAR) - e.getDateNaissance().get(Calendar.YEAR);
-		if(today.getTimeInMillis() < e.getDateNaissance().getTimeInMillis()) {
+		int age = today.get(Calendar.YEAR) - getDateNaissance().get(Calendar.YEAR);
+		if(today.getTimeInMillis() < getDateNaissance().getTimeInMillis()) {
 	        age--;
 		}
 		return age;
@@ -100,7 +100,7 @@ public class Employe extends Personne{
 	 */
 	@Override
 	public String toString() {
-		return (getNom() + " " + getPrenom() + " est un employer  qui touche " + salaire + " par mois, il a " + getAge(this) +  " ans et il travail dans l'entreprise depuis " + calculAnnuite(this) + " ans." );
+		return (getNom() + " " + getPrenom() + " est un employer  qui touche " + salaire + " par mois, il a " + getAge() +  " ans et il travail dans l'entreprise depuis " + calculAnnuite() + " ans." );
 	}
 	
 	/** Augmentation du salaire d'un pourcent mis en parametre
@@ -118,9 +118,9 @@ public class Employe extends Personne{
 	 * @param e
 	 * @return le temps passer par l'employe dans l'entreprise
 	 */
-	public int calculAnnuite(Employe e) {
+	public int calculAnnuite() {
 		GregorianCalendar today = new GregorianCalendar();
-		int annuite = today.get(Calendar.YEAR) - e.dateEmbauche.get(Calendar.YEAR);
+		int annuite = today.get(Calendar.YEAR) - dateEmbauche.get(Calendar.YEAR);
 		return annuite+1;
 	}
 }

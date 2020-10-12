@@ -14,6 +14,8 @@ public class Main {
 		Personne Enzo = new Personne("Zampaglione", "Enzo", b_p1, a_p1);
 		Personne EnzoBis = new Personne("Zampaglione", "Enzo", Enzo2, a_p2);
 		Personne Thomas = new Personne("Motbal", "Thomas", b_p2, a_p2);
+		System.out.println(Enzo);
+		System.out.println(Thomas);
 		System.out.println(Thomas.plusAgeeQue(Enzo));
 		System.out.println(Enzo.equals(EnzoBis));
 		
