@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Forme> tabForme = new ArrayList<>();
         Ellipse f = new Ellipse(10,10);
-        Cylindre f2 = new Cylindre("Zozo",10,10);
+        Cylindre f2 = new Cylindre(10,10);
         tabForme.add(f);
         tabForme.add(f2);
         //System.out.println(plusGrandeSurface(f,f2));
