@@ -1,35 +1,49 @@
 package enzo.atelier4.forme2d;
 import enzo.atelier4.Forme;
-
+/**
+ * Classe Cercle servant à modeliser les informations contenues dans un Cercle
+ * @author zampaglione_e
+ *
+ */
 public class Cercle extends Forme2D {
     private float rayon;
-    private String nom;
 
+    /**
+     * Construction d'un cercle
+     * @param rayon
+     */
     public Cercle(float rayon) {
         this.rayon = rayon;
     }
 
-    public Cercle(String nom, float rayon) {
-        this.nom = nom;
-        this.rayon = rayon;
-    }
-
-    public double surface(Forme f){
+    /**
+     * @return la surface du cercle
+     */
+    public double surface(){
         return(Math.PI*rayon*rayon);
     }
 
-    public double perimetre(Forme f){
+    /**
+     * @return le perimetre du cercle
+     */
+    public double perimetre(){
         return(2*Math.PI*rayon);
     }
 
-    public String toString() {
-        return("Votre cercle " + identifiant + " à une surface de " + surface(this) +
-                " et à un perimetre de " + perimetre(this));
-    }
-
+    /**
+     * @return l'identifiant du cercle
+     */
     protected String getIdentifiant(){
         instance+=1;
-        nom = "Cercle";
-        return nom + "_n" + instance;
+        return "Cercle" + "_n" + instance;
+    }
+
+    /** Redéfintion de toString
+     * @see java.lang.Object#toString()
+     */
+        @Override
+    public String toString() {
+        return("Votre cercle " + identifiant + " à une surface de " + this.surface() +
+                " et à un perimetre de " + this.perimetre());
     }
 }

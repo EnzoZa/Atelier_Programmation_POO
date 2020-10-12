@@ -1,15 +1,19 @@
 package enzo.atelier4;
 import enzo.atelier4.forme2d.*;
 import enzo.atelier4.forme3d.*;
+import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        ArrayList<Forme> tabForme = new ArrayList<>();
         Ellipse f = new Ellipse(10,10);
-        System.out.println(f.identifiant);
         Cylindre f2 = new Cylindre("Zozo",10,10);
-        System.out.println(f2.identifiant);
-        System.out.println(f2);
-        System.out.println(f);
+        tabForme.add(f);
+        tabForme.add(f2);
+        //System.out.println(plusGrandeSurface(f,f2));
+        for(Forme i : tabForme){
+            System.out.println(i.surface());
+        }
     }
 
 }

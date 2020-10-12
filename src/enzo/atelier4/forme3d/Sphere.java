@@ -1,36 +1,50 @@
 package enzo.atelier4.forme3d;
 import enzo.atelier4.Forme;
-
+/**
+ * Classe Sphere servant à modeliser les informations contenues dans une Sphere
+ * @author zampaglione_e
+ *
+ */
 public class Sphere extends Forme3D {
     private float rayon;
-    private String nom;
 
+    /**
+     * Construction d'une sphere
+     * @param rayon
+     */
     public Sphere(float rayon) {
         this.rayon = rayon;
     }
 
-    public Sphere(String nom, float rayon) {
-        this.nom = nom;
-        this.rayon = rayon;
-    }
-
-    public double surface(Forme f){
+    /**
+     * @return la surface de la sphere
+     */
+    public double surface(){
         return(4*Math.PI*rayon*rayon);
     }
 
-    public double volume(Forme f){
+    /**
+     * @return le volume de la sphere
+     */
+    public double volume(){
         return((4/3)*(Math.PI*rayon*rayon*rayon));
     }
 
-    @Override
-    public String toString() {
-        return("Votre sphere " + identifiant + " à une surface de " + surface(this) +
-        " et à un volume de " + volume(this));
-    }
-
+    /**
+     * @return l'identifiant de la sphere
+     */
     protected String getIdentifiant(){
         instance+=1;
-        nom = "Sphere";
-        return nom + "_n"+ instance;
+        return "Sphere" + "_n"+ instance;
     }
+
+    /** Redéfintion de toString
+     * @see java.lang.Object#toString()
+     */
+        @Override
+    public String toString() {
+        return("Votre sphere " + identifiant + " à une surface de " + this.surface() +
+        " et à un volume de " + this.volume());
+    }
+
 }
