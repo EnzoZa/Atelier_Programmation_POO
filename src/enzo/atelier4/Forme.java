@@ -6,7 +6,7 @@ import enzo.atelier4.forme3d.*;
 
 public abstract class Forme {
     protected static int instance = 0;
-    public String identifiant = getIdentifiant();
+    public final String identifiant = getIdentifiant();
 
     protected abstract String getIdentifiant();
     protected abstract double surface(Forme f);

@@ -4,7 +4,7 @@ import enzo.atelier4.Forme;
 public class Rectangle extends Forme2D {
     private float longueur;
     private float largeur;
-    protected String nom = "Rectangle";
+    private String nom;
 
     public Rectangle(float longueur, float largeur) {
         this.longueur = longueur;
@@ -32,7 +32,8 @@ public class Rectangle extends Forme2D {
     }
 
     protected String getIdentifiant(){
-        this.instance+=1;
+        instance+=1;
+        nom = "Rectangle";
         return nom + "_n"+ instance;
     }
 

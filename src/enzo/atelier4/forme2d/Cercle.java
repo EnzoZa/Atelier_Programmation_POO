@@ -3,7 +3,7 @@ import enzo.atelier4.Forme;
 
 public class Cercle extends Forme2D {
     private float rayon;
-    protected String nom = "Cercle";
+    private String nom;
 
     public Cercle(float rayon) {
         this.rayon = rayon;
@@ -28,7 +28,8 @@ public class Cercle extends Forme2D {
     }
 
     protected String getIdentifiant(){
-        this.instance+=1;
+        instance+=1;
+        nom = "Cercle";
         return nom + "_n" + instance;
     }
 }

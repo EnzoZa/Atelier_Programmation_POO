@@ -3,7 +3,7 @@ import enzo.atelier4.Forme;
 
 public class Sphere extends Forme3D {
     private float rayon;
-    protected String nom = "Sphere";
+    private String nom;
 
     public Sphere(float rayon) {
         this.rayon = rayon;
@@ -29,7 +29,8 @@ public class Sphere extends Forme3D {
     }
 
     protected String getIdentifiant(){
-        this.instance+=1;
+        instance+=1;
+        nom = "Sphere";
         return nom + "_n"+ instance;
     }
 }

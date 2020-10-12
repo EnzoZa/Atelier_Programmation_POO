@@ -6,7 +6,7 @@ public class Ellipse extends Forme2D {
     private float largeur;
     private float demi_largeur;
     private float demi_longueur;
-    protected String nom = "Ellipse";
+    private String nom;
 
     public Ellipse(float longueur, float largeur) {
         this.longueur = longueur;
@@ -38,7 +38,8 @@ public class Ellipse extends Forme2D {
     }
 
     protected String getIdentifiant(){
-        this.instance+=1;
+        instance+=1;
+        nom = "Ellipse";
         return nom + "_n" + instance;
     }
 }

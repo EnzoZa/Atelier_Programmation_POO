@@ -4,7 +4,7 @@ import enzo.atelier4.Forme;
 public class Cylindre extends Forme3D {
     private float rayon;
     private float hauteur;
-    protected String nom = "Cylindre";
+    private String nom;
 
     public Cylindre(float rayon, float hauteur) {
         this.rayon = rayon;
@@ -31,7 +31,8 @@ public class Cylindre extends Forme3D {
     }
 
     protected String getIdentifiant(){
-        this.instance+=1;
+        instance+=1;
+        nom = "Cylindre";
         return nom + "_n"+ instance;
     }
 
