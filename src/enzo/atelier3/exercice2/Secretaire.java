@@ -72,7 +72,7 @@ public class Secretaire extends Employe{
 	 */
 	@Override
 	public String toString() {
-		return(getNom() + " " + getPrenom() + " est une secretaire qui touche " + salaire + " et elle a " + sizeListeManager() + " manager : " + listeManager);
+		return(super.toString() + "\nEst une secretaire qui touche " + salaire + " et elle a " + sizeListeManager() + " manager : " + listeManager);
 	}
 	
 	/** Associe une secretaire à un manager

@@ -100,7 +100,7 @@ public class Employe extends Personne{
 	 */
 	@Override
 	public String toString() {
-		return (getNom() + " " + getPrenom() + " est un employer  qui touche " + salaire + " par mois, il a " + getAge() +  " ans et il travail dans l'entreprise depuis " + calculAnnuite() + " ans." );
+		return (super.toString() + "\nEst un employé qui travail dans l'entreprise depuis " + calculAnnuite() + " ans." );
 	}
 	
 	/** Augmentation du salaire d'un pourcent mis en parametre

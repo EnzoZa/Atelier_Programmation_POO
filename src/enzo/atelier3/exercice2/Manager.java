@@ -64,7 +64,7 @@ public class Manager extends Employe {
 	 */
 	@Override
 	public String toString() {
-		return (getNom() + " " + getPrenom() + " est un manager qui touche " + salaire + " ,il travail dans l'entreprise depuis " + calculAnnuite()
+		return (super.toString() + "\nEst un manager qui touche " + salaire + " ,il travail dans l'entreprise depuis " + calculAnnuite()
 				+ " et sa secretaire est " + secretaire.getNom() + " " + secretaire.getPrenom());
 	}
 
