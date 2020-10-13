@@ -9,7 +9,7 @@ public class Personne{
     private String prenom;
     private final GregorianCalendar dateNaissance;
     private Adresse adresse=ADRESSE_INCONNUE;
-    private static int personneInstance;
+    private static int personneInstance = 0;
 	
 	/**
 	 * Constructeur de Personne
