@@ -22,7 +22,7 @@ public class Manager extends Employe {
 	 * @param dateEmbauche
 	 * @param secretaire
 	 */
-	protected Manager(String leNom,String lePrenom, GregorianCalendar dateNaissance, Adresse lAdresse,
+	private Manager(String leNom,String lePrenom, GregorianCalendar dateNaissance, Adresse lAdresse,
 			float salaire, GregorianCalendar dateEmbauche, Secretaire secretaire) {
 		super(leNom,lePrenom, dateNaissance, lAdresse, salaire, dateEmbauche);
 		// TODO Auto-generated constructor stub
@@ -48,7 +48,7 @@ public class Manager extends Employe {
 	 * @param secretaire
 	 * @return un Manager si les conditions sont respectees sinon null
 	 */
-	protected static Manager createManager(String leNom,String lePrenom, GregorianCalendar dateNaissance, Adresse lAdresse,
+	public static Manager createManager(String leNom,String lePrenom, GregorianCalendar dateNaissance, Adresse lAdresse,
 			float salaire, GregorianCalendar dateEmbauche, Secretaire secretaire) {
 		Manager temp;
 		if (verifAgeValide(dateEmbauche,dateNaissance)) {
