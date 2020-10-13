@@ -1,5 +1,8 @@
 package enzo.atelier4.forme2d;
 import enzo.atelier4.Forme;
+
+import java.util.Objects;
+
 /**
  * Classe Rectangle servant à modeliser les informations contenues dans un Rectangle
  * @author zampaglione_e
@@ -50,5 +53,15 @@ public class Rectangle extends Forme2D {
                 " et à un perimetre de " + this.perimetre());
     }
 
-
+    /** Redéfintion de equals
+     * @see java.lang.Object#equals()
+     */
+        @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Rectangle)) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return Float.compare(rectangle.longueur, longueur) == 0 &&
+                Float.compare(rectangle.largeur, largeur) == 0;
+    }
 }

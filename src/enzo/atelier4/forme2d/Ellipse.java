@@ -1,5 +1,8 @@
 package enzo.atelier4.forme2d;
 import enzo.atelier4.Forme;
+
+import java.util.Objects;
+
 /**
  * Classe Ellipse servant à modeliser les informations contenues dans une Ellipse
  * @author zampaglione_e
@@ -54,4 +57,15 @@ public class Ellipse extends Forme2D {
                 " et à un perimetre de " + this.perimetre());
     }
 
+    /** Redéfintion de equals
+     * @see java.lang.Object#equals()
+     */
+        @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ellipse)) return false;
+        Ellipse ellipse = (Ellipse) o;
+        return Float.compare(ellipse.longueur, longueur) == 0 &&
+                Float.compare(ellipse.largeur, largeur) == 0;
+    }
 }

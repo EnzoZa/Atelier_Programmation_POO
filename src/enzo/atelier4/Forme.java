@@ -19,14 +19,4 @@ public abstract class Forme {
     public static boolean plusGrandSurface(Forme f, Forme f2){
         return (f.surface()>f2.surface());
     }
-/*
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Forme)) return false;
-        Forme forme = (Forme) o;
-        return Float.compare(Forme.longueur, longueur) == 0 &&
-                Float.compare(Forme.largeur, largeur) == 0 &&
-                Float.compare(Forme.hauteur, hauteur) == 0;
-    } */
 }

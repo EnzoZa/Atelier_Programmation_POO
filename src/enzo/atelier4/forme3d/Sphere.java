@@ -1,5 +1,8 @@
 package enzo.atelier4.forme3d;
 import enzo.atelier4.Forme;
+
+import java.util.Objects;
+
 /**
  * Classe Sphere servant à modeliser les informations contenues dans une Sphere
  * @author zampaglione_e
@@ -47,4 +50,14 @@ public class Sphere extends Forme3D {
         " et à un volume de " + this.volume());
     }
 
+    /** Redéfintion de equals
+     * @see java.lang.Object#equals()
+     */
+        @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Sphere)) return false;
+        Sphere sphere = (Sphere) o;
+        return Float.compare(sphere.rayon, rayon) == 0;
+    }
 }

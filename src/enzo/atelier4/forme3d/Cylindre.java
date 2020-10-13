@@ -1,5 +1,8 @@
 package enzo.atelier4.forme3d;
 import enzo.atelier4.Forme;
+
+import java.util.Objects;
+
 /**
  * Classe Cylindre servant à modeliser les informations contenues dans un Cylindre
  * @author zampaglione_e
@@ -50,4 +53,15 @@ public class Cylindre extends Forme3D {
                 " et à un volume de " + this.volume());
     }
 
+    /** Redéfintion de equals
+     * @see java.lang.Object#equals()
+     */
+        @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cylindre)) return false;
+        Cylindre cylindre = (Cylindre) o;
+        return Float.compare(cylindre.rayon, rayon) == 0 &&
+                Float.compare(cylindre.hauteur, hauteur) == 0;
+    }
 }

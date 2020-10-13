@@ -1,5 +1,8 @@
 package enzo.atelier4.forme2d;
 import enzo.atelier4.Forme;
+
+import java.util.Objects;
+
 /**
  * Classe Cercle servant à modeliser les informations contenues dans un Cercle
  * @author zampaglione_e
@@ -45,5 +48,16 @@ public class Cercle extends Forme2D {
     public String toString() {
         return("Votre cercle " + identifiant + " à une surface de " + this.surface() +
                 " et à un perimetre de " + this.perimetre());
+    }
+
+    /** Redéfintion de equals
+     * @see java.lang.Object#equals()
+     */
+        @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cercle)) return false;
+        Cercle cercle = (Cercle) o;
+        return Float.compare(cercle.rayon, rayon) == 0;
     }
 }
