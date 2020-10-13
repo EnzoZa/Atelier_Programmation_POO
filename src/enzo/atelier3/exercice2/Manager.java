@@ -76,6 +76,7 @@ public class Manager extends Employe {
 	public void changeSecretaire(Secretaire secretaire) {
 		secretaire.delManager(this);
 		this.secretaire = secretaire;
+		secretaire.addManager(this);
 	}
 	
 	/** Augmentation du salaire d'un pourcent mis en parametre
