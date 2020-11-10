@@ -28,7 +28,7 @@
                 indice_pile++;
             }
             else{
-                System.err.println("Tableau complet");
+                System.err.println("Pile complet");
             }
         }
 
@@ -37,6 +37,9 @@
             Object result = null;
             if(indice_pile != 0){
                 result = tab[indice_pile-1];
+            }
+            else{
+                System.err.println("Pile vide")
             }
             return result;
         }
@@ -48,6 +51,9 @@
                 indice_pile --;
                 result = tab[indice_pile];
                 tab[indice_pile] = null;
+            }
+            else{
+                System.err.println("Pile vide")
             }
             return result;
         }
