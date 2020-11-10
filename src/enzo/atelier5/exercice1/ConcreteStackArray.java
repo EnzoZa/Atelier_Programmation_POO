@@ -2,7 +2,7 @@
 
     public class ConcreteStackArray implements AStack{
         private Object tab[];
-        private static int indice_pile = 0;
+        private int indice_pile = 0;
 
         public ConcreteStackArray(int taille_tab){
             tab = new Object[taille_tab];
