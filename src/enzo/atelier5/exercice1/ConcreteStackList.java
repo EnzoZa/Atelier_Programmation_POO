@@ -1,4 +1,5 @@
 package enzo.atelier5.exercice1;
+import java.util.*;
 
 public class ConcreteStackList implements AStack{
     private ArrayList<Object> list;
@@ -8,26 +9,54 @@ public class ConcreteStackList implements AStack{
     }
 
     public ConcreteStackList(){
-        list =  = new ArrayList<Object>();
+        list = new ArrayList<Object>();
+    }
+
+    public void printList(){
+        if(!isEmpty()){
+            for(Object i : this.list){
+                System.out.println(i);
+            }
+        }
+        else{
+            System.err.println("Pile vide");
+        }
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return list.isEmpty();
     }
 
     @Override
     public void push(Object o) {
-
+        list.add(o);
     }
 
     @Override
     public Object peek() {
-        return null;
+
+        Object result = null;
+        if(!isEmpty()){
+            result = list.get(list.size()-1);
+        }
+        else{
+            System.err.println("Pile vide");
+        }
+        return result;
     }
 
     @Override
     public Object pop() {
-        return null;
+
+        Object result = null;
+        if(!isEmpty()){
+            result = list.get(list.size()-1);
+            list.remove(list.size()-1);
+        }
+        else{
+            System.err.println("Pile vide");
+        }
+        return result;
     }
 }

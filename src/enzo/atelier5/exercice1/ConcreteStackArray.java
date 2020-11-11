@@ -9,10 +9,15 @@
         }
 
         public void printTab(){
-            for(Object i : this.tab){
-                if(i!=null){
-                    System.out.println(i);
+            if(!isEmpty()) {
+                for (Object i : this.tab) {
+                    if (i != null) {
+                        System.out.println(i);
+                    }
                 }
+            }
+            else{
+                System.err.println("Pile vide");
             }
         }
 
@@ -39,7 +44,7 @@
                 result = tab[indice_pile-1];
             }
             else{
-                System.err.println("Pile vide")
+                System.err.println("Pile vide");
             }
             return result;
         }
@@ -53,7 +58,7 @@
                 tab[indice_pile] = null;
             }
             else{
-                System.err.println("Pile vide")
+                System.err.println("Pile vide");
             }
             return result;
         }
