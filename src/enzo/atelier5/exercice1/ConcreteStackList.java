@@ -12,15 +12,17 @@ public class ConcreteStackList implements AStack{
         list = new ArrayList<Object>();
     }
 
-    public void printList(){
+    public String toString(){
+        String result = "";
         if(!isEmpty()){
             for(Object i : this.list){
-                System.out.println(i);
+                result += (i + "|");
             }
         }
         else{
-            System.err.println("Pile vide");
+            result = "Pile vide";
         }
+        return result;
     }
 
     @Override

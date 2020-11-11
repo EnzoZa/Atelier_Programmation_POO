@@ -8,17 +8,20 @@
             tab = new Object[taille_tab];
         }
 
-        public void printTab(){
+        @Override
+        public String toString(){
+            String result = "";
             if(!isEmpty()) {
                 for (Object i : this.tab) {
                     if (i != null) {
-                        System.out.println(i);
+                        result += (i + "|");
                     }
                 }
             }
             else{
-                System.err.println("Pile vide");
+                result = "Pile vide";
             }
+            return result;
         }
 
         @Override
