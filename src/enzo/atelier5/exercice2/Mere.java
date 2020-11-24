@@ -1,5 +1,5 @@
 package enzo.atelier5.exercice2;
-
+/*
 public class Mere{
     private int i;
     private UneClasse unObjet; //Clonable
@@ -8,4 +8,5 @@ public class Mere{
         i = unI;
         unObjet = unObj;
     }
-} 
+}
+*/

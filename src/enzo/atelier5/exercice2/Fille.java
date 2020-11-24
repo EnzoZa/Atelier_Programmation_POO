@@ -1,5 +1,5 @@
 package enzo.atelier5.exercice2;
-
+/*
 public class Fille extends Mere{
     private Object unObjetSensible;
 
@@ -8,3 +8,4 @@ public class Fille extends Mere{
         unObjetSensible = unObjSens;
     }
 }
+*/
