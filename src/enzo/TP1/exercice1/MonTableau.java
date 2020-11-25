@@ -11,18 +11,19 @@ public class MonTableau implements EstComparable{
         this.tableau = new int [taille];
     }
 
-    public int compareA(Object o){
-        int result1 = 0;
-        int result2 = 0;
-        int resultFin = 0;
-
+    public int sommeTableau(){
+        int result = 0;
         for(int value : this.tableau){
-            result1+=value;
+            result+=value;
         }
+        return result;
+    }
 
-        for(int value : (MonTableau) o.tableau){
-            result2+=value;
-        }
+    public int compareA(Object o){
+        int result1 = this.sommeTableau();
+        MonTableau tab = (MonTableau)o;
+        int result2 = tab.sommeTableau();
+        int resultFin = 0;
 
         if(result1>result2){
             resultFin = 1;
