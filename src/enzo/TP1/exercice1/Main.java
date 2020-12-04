@@ -7,8 +7,21 @@ public class Main {
         int[] b = new int[] {-1,2,-3,4,5};
         MonTableau m1=new MonTableau(a);
         MonTableau m2=new MonTableau(b);
-        System.out.println(m1.compareA(m2)); //Affiche 1,
-        //car 1+2+3+4 > -1+2-3+4+5
+        int c = 1;
+        try{
+            System.out.println(m1.compareA(c));
+        }
+        catch(ClassCastException e){
+            System.err.println(e.getMessage());
+        }
+
+        try{
+            System.out.println(m1.compareA(m2));//Affiche 1,
+            //car 1+2+3+4 > -1+2-3+4+5
+        }
+        catch(ClassCastException e){
+            System.err.println(e.getMessage());
+        }
 
     }
 }
