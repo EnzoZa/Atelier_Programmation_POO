@@ -2,12 +2,14 @@ package enzo.TP1.exercice2;
 
 import enzo.TP1.exercice1.EstComparable;
 import enzo.TP1.exercice1.MonTableau;
+import enzo.atelier5.exercice2.Mere;
+import enzo.atelier5.exercice2.UneClasse;
 import enzo.atelier6.exercice1.FullStackException;
 
 import java.util.Objects;
 import java.time.YearMonth;
 
-public class Citerne implements EstComparable{
+public class Citerne implements EstComparable, Cloneable{
     private static int totalCiterne;
     private final int index;
     protected final float capacite; // > 0 < 20 000
@@ -172,6 +174,23 @@ public class Citerne implements EstComparable{
             }
         }
         return result;
+    }
+
+    public Object clone() throws CloneNotSupportedException{
+        Citerne c = null;
+        try{
+            c = (Citerne) super.clone();
+            //c.index=index;
+            //c.capacite=capacite;
+            c.typeLiquide=typeLiquide;
+            c.dateCreation=dateCreation;
+            c.quantiteLiquide = quantiteLiquide;
+            c.propre=propre;
+        }
+        catch(CloneNotSupportedException e){
+            System.err.println(e.getMessage());
+        }
+        return c;
     }
 
 }

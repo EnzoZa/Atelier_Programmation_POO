@@ -1,5 +1,7 @@
 package enzo.TP1.exercice2;
 
+import enzo.atelier5.exercice2.Mere;
+
 public class Main {
     public static void main(String[] args) {
         /*
@@ -39,7 +41,7 @@ public class Main {
         }
          */
 
-
+        /*
         CiterneSecurisee cs = new CiterneSecurisee(1000);
         cs.ajouterLiquide(Citerne.TypeLiquide.EAU, 1010);
         System.out.println(cs);
@@ -77,6 +79,14 @@ public class Main {
         catch(ClassCastException e){
             System.err.println(e.getMessage());
         }
-
+         */
+        Citerne citerne = new Citerne(15000);
+        try{
+            Citerne c = (Citerne) citerne.clone();
+            System.out.println(citerne);
+            System.out.println(c);
+        }catch(CloneNotSupportedException e){
+            System.err.println(e);
+        }
     }
 }
