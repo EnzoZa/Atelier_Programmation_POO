@@ -7,6 +7,14 @@ public class CiterneSecurisee extends Citerne{
     private float capaciteTropPlein;
     private float quantiteLiquideTropPlein;
 
+    /**
+     * Constructeur d'une citerne sécurisée
+     * @param capacite
+     * @param dateCreation
+     * @param typeLiquide
+     * @param quantiteLiquide
+     * @param capaciteTropPlein
+     */
     public CiterneSecurisee(float capacite, YearMonth dateCreation, TypeLiquide typeLiquide, float quantiteLiquide, float capaciteTropPlein){
         super(capacite, dateCreation, typeLiquide, quantiteLiquide);
         if(capaciteTropPlein>capacite) {
@@ -20,34 +28,63 @@ public class CiterneSecurisee extends Citerne{
         this.quantiteLiquideTropPlein = 0;
     }
 
+    /**
+     * Constructeur d'une citerne sécurisée
+     * @param capacite
+     * @param dateCreation
+     * @param typeLiquide
+     * @param quantiteLiquide
+     */
     public CiterneSecurisee(float capacite, YearMonth dateCreation, TypeLiquide typeLiquide, float quantiteLiquide){
         super(capacite, dateCreation, typeLiquide, quantiteLiquide);
         this.capaciteTropPlein = capacite*0.1f;
         this.quantiteLiquideTropPlein = 0;
     }
 
+    /**
+     * Constructeur d'une citerne sécurisée
+     * @param capacite
+     * @param typeLiquide
+     * @param quantiteLiquide
+     */
     public CiterneSecurisee(float capacite, TypeLiquide typeLiquide, float quantiteLiquide){
         super(capacite, typeLiquide, quantiteLiquide);
         this.capaciteTropPlein = capacite*0.1f;
         this.quantiteLiquideTropPlein = 0;
     }
 
+    /**
+     * Constructeur d'une citerne sécurisée
+     * @param capacite
+     * @param quantiteLiquide
+     */
     public CiterneSecurisee(float capacite, float quantiteLiquide){
         super(capacite, quantiteLiquide);
         this.capaciteTropPlein = capacite*0.1f;
         this.quantiteLiquideTropPlein = 0;
     }
 
+    /**
+     * Constructeur d'une citerne sécurisée
+     * @param capacite
+     */
     public CiterneSecurisee(float capacite){
         super(capacite);
         this.capaciteTropPlein = capacite*0.1f;
         this.quantiteLiquideTropPlein = 0;
     }
 
+    /**
+     * Modificateur
+     * @param capaciteTropPlein
+     */
     public void setCapaciteTropPlein(float capaciteTropPlein) {
         this.capaciteTropPlein = capaciteTropPlein;
     }
 
+    /** Redéfintion de toString
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
 
@@ -55,6 +92,9 @@ public class CiterneSecurisee extends Citerne{
                 ", volume occupé cuve trop plein : " + quantiteLiquideTropPlein;
     }
 
+    /** Redéfintion de equals
+     * @see java.lang.Object#equals()
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,6 +106,11 @@ public class CiterneSecurisee extends Citerne{
     }
 
 
+    /**
+     * Ajoute du liquide dans la citerne sécurisée
+     * @param typeLiquide
+     * @param quantiteAjouter
+     */
     public void ajouterLiquide(TypeLiquide typeLiquide, float quantiteAjouter) {
         if(typeLiquide != this.typeLiquide && propre == false || quantiteAjouter < 0) {
             System.out.println("Impossible d'ajouter un contenu différent sans avoir une cuve propre");
@@ -90,6 +135,10 @@ public class CiterneSecurisee extends Citerne{
         }
     }
 
+    /**
+     * Enleve une certaine quantité de la citerne sécurisée
+     * @param quantiteEnlever
+     */
     public void enleverLiquide(float quantiteEnlever) {
         if(quantiteLiquideTropPlein>=quantiteEnlever){
             quantiteLiquideTropPlein-=quantiteEnlever;
