@@ -8,6 +8,12 @@ public class Anagramme {
     private HashMap<String,Integer> map = new HashMap<String, Integer>();
     private int limit;
 
+    /**
+     * Constructeur d'une liste d'anagrammes
+     * @param filepath
+     * @param limit
+     * @throws IOException
+     */
     public Anagramme(String filepath, int limit) throws IOException {
         this.map = readFile(filepath);
         this.limit = limit;
@@ -15,6 +21,12 @@ public class Anagramme {
     }
 
 
+    /**
+     * Lis un fichier
+     * @param filePath
+     * @return
+     * @throws IOException
+     */
     public HashMap<String, Integer> readFile(String filePath) throws IOException {
 
         String line;
@@ -37,6 +49,9 @@ public class Anagramme {
 
     public HashMap<String,Integer> getMap(){return map;}
 
+    /**
+     * Recherche les anagrammes
+     */
     public void searchAnagramme(){
         ArrayList<String> listAnagramme = new ArrayList<String>();
         for (Map.Entry<String,Integer> entry : map.entrySet()) {
@@ -56,6 +71,12 @@ public class Anagramme {
         }
     }
 
+    /**
+     * Vérifie si les deux mots sont des anagrammes
+     * @param firstWord
+     * @param secondWord
+     * @return true si les deux mots sont des anagrammes sinon false
+     */
     public boolean isAnagram(String firstWord, String secondWord) {
         Boolean result = false;
         if(firstWord.length() == secondWord.length()){
